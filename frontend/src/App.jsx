@@ -23,7 +23,7 @@ const App = () => {
   // Fetch recent activity from backend
   const fetchActivity = async () => {
     try {
-      const res = await fetch('http://localhost:8080/activity');
+      const res = await fetch('https://leaderboard-rwnd.onrender.com/activity');
       const data = await res.json();
       setRecentActivity(data);
     } catch (err) {
@@ -35,7 +35,7 @@ const App = () => {
   const handleAddUser = async () => {
     if (!newUserName.trim()) return;
     try {
-      const res = await fetch('http://localhost:8080/users', {
+      const res = await fetch('https://leaderboard-rwnd.onrender.com/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: newUserName.trim() })
@@ -55,7 +55,7 @@ const App = () => {
     if (!selectedUserId) return;
     setIsClaimingPoints(true);
     try {
-      const res = await fetch(`http://localhost:8080/users/${selectedUserId}/claim`, {
+      const res = await fetch(`https://leaderboard-rwnd.onrender.com/users/${selectedUserId}/claim`, {
         method: 'POST',
       });
       if (!res.ok) throw new Error('Failed to claim points');
@@ -94,7 +94,7 @@ const App = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("http://localhost:8080/users"); 
+        const res = await fetch("https://leaderboard-rwnd.onrender.com/users"); 
         const data = await res.json();
         setUsers(data);
       } catch (err) {
