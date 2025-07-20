@@ -7,7 +7,7 @@ const cors = require('cors');
 
 async function  main() {
     try{
-        await  mongoose.connect('mongodb://127.0.0.1:27017/leaderBoard');
+        await  mongoose.connect('mongodb+srv://rahulsannamathdev:Rahul5002@cluster0.qvx4ue7.mongodb.net/leaderBoard?retryWrites=true&w=majority&appName=Cluster0');
         console.log("database connected");
     }
 
