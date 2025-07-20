@@ -75,3 +75,6 @@ app.get('/activity', async (req, res) => {
     res.json(activities);
 });
 
+app.get("/health", (req, res) => {
+    res.json({ status: "ok" });
+});
